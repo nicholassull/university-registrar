@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using UniversityRegistrar.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace UniversityRegistrar.Controllers
@@ -27,6 +28,14 @@ namespace UniversityRegistrar.Controllers
       _db.Students.Add(student);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+    public ActionResult Details (int id)
+    {
+      Student thisStudent = _db.Students
+      .Include(student => student.JoinEntities)
+      .ThenInclude(join => join.Course)
+      .FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
     }
   }
 }

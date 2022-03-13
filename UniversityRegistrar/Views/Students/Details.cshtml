@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2>View Student</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This student hasn't signed up for any courses yet.</p>
+}
+else
+{
+  <h4>Enrolled Courses</h4>
+  <ul>
+    @foreach (var join in Model.JoinEntities)
+    {
+      <li>@Html.ActionLink("${join.Course.CourseName}", "Details", new { id = join.CourseId }, new{})</li>
+    }
+  </ul>
+}
+<hr />
+@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId }, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId }, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Back", "Index", new {}, new { @class = "btn btn-outline-primary" })
