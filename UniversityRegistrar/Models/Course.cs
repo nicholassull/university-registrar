@@ -8,6 +8,8 @@ namespace UniversityRegistrar.Models{
   {
     public int CourseId {get; set;}
 
+    [Required]
+    [DisplayName("Input Course ID Label")]
     public string Label {get; set;}
 
     public string CourseName {get; set;}
