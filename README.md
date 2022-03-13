@@ -12,6 +12,7 @@
 * _Bootstrap_
 * _Razor View Engine_
 * _Entity Framework_
+* _MySQL Workbench_
 
 ## Description
 
@@ -22,9 +23,21 @@ _This web application allows users create different students and associate them 
 * _Open your terminal and navigate to the folder you'd like to download the files into._
 * _Run the command below_
 > git clone https://github.com/nicholassull/university-registrar.git
+* _Download [MySQL Workbench](https://www.mysql.com/products/workbench/) and use it to create a local instance and an associated password._
+* Within the directory ~/UniversityRegistrar, create a file named appsettings.json and input the lines of code bellow.
+> {
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=university_registrar;uid=root;pwd=[YOUR-PASSWORD];"
+  }
+}
+  * Replace [YOUR-PASSWORD] with the password you created within MySQL Workbench and make sure the port matches your own.
 * _Navigate to ~/UniversityRegistrar in your terminal._
 * _Run the commands below_
->dotnet restore
+>dotnet tool install --global dotnet-ef --version 3.0.0
+
+>dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.0
+
+>dotnet ef database update
 
 >dotnet build
 
