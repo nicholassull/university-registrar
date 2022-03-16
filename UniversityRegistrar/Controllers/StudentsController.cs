@@ -38,6 +38,11 @@ namespace UniversityRegistrar.Controllers
       .FirstOrDefault(student => student.StudentId == id);
       return View(thisStudent);
     }
+    public ActionResult Delete (int id)
+    {
+      Student thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
+    }
     // public ActionResult Edit (int id)
     // {
     //   var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
