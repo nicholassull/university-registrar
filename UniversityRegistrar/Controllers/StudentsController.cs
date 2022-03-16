@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UniversityRegistrar.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace UniversityRegistrar.Controllers
 {
@@ -42,5 +43,21 @@ namespace UniversityRegistrar.Controllers
     //   var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
     //   // add ViewBag select list for courses
     // }
+    public ActionResult AddCourse(int id)
+    {
+      Student thisStudent = _db.Students.FirstOrDefault(student  => student.StudentId == id);
+      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "CourseName");
+      return View(thisStudent);
+    }
+    [HttpPost]
+    public ActionResult AddCourse(Student student, int CourseId)
+    {
+      if (CourseId != 0)
+      {
+        _db.StudentCourse.Add(new StudentCourse() { CourseId = CourseId, StudentId = student.StudentId});
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
