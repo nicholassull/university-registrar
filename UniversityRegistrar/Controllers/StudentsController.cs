@@ -37,5 +37,10 @@ namespace UniversityRegistrar.Controllers
       .FirstOrDefault(student => student.StudentId == id);
       return View(thisStudent);
     }
+    // public ActionResult Edit (int id)
+    // {
+    //   var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+    //   // add ViewBag select list for courses
+    // }
   }
 }
