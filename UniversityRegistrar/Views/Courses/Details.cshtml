@@ -8,7 +8,8 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
 <hr />
-
+<h4>Description</h4>
+<p>@Model.Description</p>
 @if (@Model.JoinEntities.Count == 0)
 {
   <p>There are no students enrolled in this course.</p>
