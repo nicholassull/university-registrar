@@ -43,6 +43,14 @@ namespace UniversityRegistrar.Controllers
       Student thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       return View(thisStudent);
     }
+    [HttpPost,ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
+      _db.Students.Remove(thisStudent);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
     public ActionResult Edit (int id)
     {
       var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
