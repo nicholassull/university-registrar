@@ -43,11 +43,18 @@ namespace UniversityRegistrar.Controllers
       Student thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       return View(thisStudent);
     }
-    // public ActionResult Edit (int id)
-    // {
-    //   var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
-    //   // add ViewBag select list for courses
-    // }
+    public ActionResult Edit (int id)
+    {
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
+    }
+    [HttpPost]
+    public ActionResult Edit (Student student)
+    {
+      _db.Entry(student).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
     public ActionResult AddCourse(int id)
     {
       Student thisStudent = _db.Students.FirstOrDefault(student  => student.StudentId == id);

@@ -14,6 +14,7 @@ namespace UniversityRegistrar.Models
     }
     public int StudentId { get; set; }
     public string Name { get; set; }
+    [DisplayName("Enrollment Date")]
     public DateTime EnrollmentDate { get; set; }
     public virtual ICollection<StudentCourse> JoinEntities { get; set; }
   }
