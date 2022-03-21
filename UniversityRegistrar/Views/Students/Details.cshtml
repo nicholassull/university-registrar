@@ -20,6 +20,7 @@ else
       <li>@Html.ActionLink($"{join.Course.CourseName}", "Details", "Courses", new { id = join.CourseId }, new{ })</li>
       @using (Html.BeginForm("DeleteCourse", "Students"))
       {
+        //Passes in a hidden value (StudentCourseId) to the DeleteCourse router
         @Html.Hidden("joinId", @join.StudentCourseId)
         <input type="submit" value="Delete Course" class="btn btn-outline-danger">
       }

@@ -7,6 +7,7 @@ namespace UniversityRegistrar.Models{
   public class Course
   {
     public int CourseId {get; set;}
+    public int DepartmentId {get; set;}
 
     [Required]
     [DisplayName("Input Course ID Label")]
@@ -18,6 +19,7 @@ namespace UniversityRegistrar.Models{
     public string Description {get; set;}
 
     public virtual ICollection<StudentCourse> JoinEntities {get; set;}
+    public virtual Department Department {get; set;}
 
     public Course()
     {
