@@ -4,5 +4,6 @@
 }
 
 <h1>Welcome to the University Registrar!</h1>
-<p>@Html.ActionLink("See all students", "Index", "Students")</p>
-<p>@Html.ActionLink("See all courses", "Index", "Courses")</p>
+
+@Html.ActionLink("View Courses", "Index", "Students", new {}, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("View Students", "Index", "Courses", new {}, new { @class = "btn btn-outline-primary" })
