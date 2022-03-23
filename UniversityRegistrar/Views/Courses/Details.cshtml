@@ -25,7 +25,7 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Go back to Home Page", "Index", "Home")</p>
-<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Go back to course list", "Index")</p>
+@Html.ActionLink("Go back to Home Page", "Index", "Home", new {}, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId }, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Back to Courses", "Index", new {}, new { @class = "btn btn-outline-primary" })
