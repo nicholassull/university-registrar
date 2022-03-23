@@ -5,6 +5,7 @@
 @using UniversityRegistrar.Models
 
 <h2>Students</h2>
+<hr />
 
 @if (Model.Count == 0)
 {
@@ -16,6 +17,6 @@
   <li>@Html.ActionLink($"{student.Name} | {student.EnrollmentDate}", "Details", new {id = student.StudentId})</li>
 }
 
-<hr />
-<p>@Html.ActionLink("Add a new Student", "Create")</p>
-<p>@Html.ActionLink("Return Home", "Index", "Home")</p>
+
+@Html.ActionLink("Add New Student", "Create", new { }, new { @class = "btn btn-outline-primary" })
+@Html.ActionLink("Home", "Index", "Home", new { }, new { @class = "btn btn-outline-primary" })

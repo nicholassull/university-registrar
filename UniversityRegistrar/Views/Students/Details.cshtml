@@ -28,7 +28,7 @@ else
   </ul>
 }
 <hr />
-<p>@Html.ActionLink("Add a course", "AddCourse", new {id = Model.StudentId}, new { @class = "btn btn-outline-success" })</p>
+@Html.ActionLink("Add a course", "AddCourse", new {id = Model.StudentId}, new { @class = "btn btn-outline-success" })
 @Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId }, new { @class = "btn btn-outline-primary" })
 @Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId }, new { @class = "btn btn-outline-primary" })
 @Html.ActionLink("Back", "Index", new {}, new { @class = "btn btn-outline-primary" })
