@@ -16,4 +16,4 @@
   <input type = "submit" value = "save" />
 }
 
-<p>@Html.ActionLink("Back to Student", "Details", new {id = Model.StudentId})</p>
+@Html.ActionLink("Back to Student", "Details", new { id = Model.StudentId }, new { @class = "btn btn-outline-primary" })
