@@ -16,7 +16,7 @@
 
 ## Description
 
-_This web application allows users create different students and associate them with specific courses. Each student can enroll in multiple courses and each course can contain multiple students. Using a SQL database, this application lets you manage the relationships between students and their courses, including the ability to edit and delete._
+_This ASP.NET MVC Core application allows users create different students and associate them with specific courses. Each student can enroll in multiple courses and each course can contain multiple students. Using a SQL database, this application lets you manage the relationships between students and their courses, including the ability to edit and delete._
 
 ## Setup Instructions
 
